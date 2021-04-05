@@ -43,7 +43,7 @@ export const LoginScreen = () => {
                     onChange={handleInputChange}
                 />
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Pasword..."
                     name="password"
                     className="auth__input"
