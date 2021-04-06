@@ -1,8 +1,11 @@
 .journal__main-content{
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 .journal__main-content main{
     text-align: center;
@@ -17,6 +20,7 @@
     padding-right: 10px;
     width: 450px;
     padding-top: 10px;
+    transition: transform .3s ease;
 }
 .journal__sidebar-navbar{
     display: flex;
@@ -86,3 +90,50 @@
     padding: 5px;
     font-size: 12px;
 }
+
+.journal__sidebar__hide{
+    transition: transform .3s ease;
+    transform: translate(90%);
+    position: absolute;
+    right: 0;
+}
+.main__sidebar{
+    width: 100%;
+}
+.btn-toggle{
+    margin-right:20px;
+    display: none;
+}
+
+@media (max-width:1000px){
+    .main__sidebar{
+        width: 100%;
+    }
+}
+
+@media (max-width:750px){
+    .journal__sidebar__hide{
+        transform: translate(100%);
+    }
+    .btn-toggle{
+        display: block;
+        margin-right:20px;
+    }
+    .journal__sidebar{
+        background-color: $dark-grey;
+        color: white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height: 99%;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+        padding-top: 10px;
+        transition: transform .3s ease;
+    }
+    // .btn-toggle{
+    //     display: none;
+    // }
+}
+

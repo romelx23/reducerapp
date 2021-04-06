@@ -121,3 +121,8 @@ export const deleteNote=(id)=>(
 export const noteLogout=()=>({
     type:types.notesLogoutCleaning
 });
+
+export const sideHide=(toggle)=>({
+    type:types.sideHide,
+    payload:toggle
+})

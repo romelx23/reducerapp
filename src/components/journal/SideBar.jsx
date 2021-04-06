@@ -1,10 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { startLogOut } from '../../actions/auth';
-import { startNewNote } from '../../actions/notes';
+import { sideHide, startNewNote } from '../../actions/notes';
 import { JournalEntries } from './JournalEntries'
 
 export const SideBar = () => {
+    // const [hiden, setHiden] = useState(true);
+    const {hide} = useSelector(state => state.notes)
     const dispatch = useDispatch();
     const {name} = useSelector(state => state.auth)
     const handleLogOut=()=>{
@@ -15,9 +17,23 @@ export const SideBar = () => {
     const handleAddNew=()=>{
         dispatch(startNewNote());
     }
+
+    const handleSidebar=()=>{
+        dispatch(sideHide(false))
+    }
     return (
-        <aside className="journal__sidebar">
+        <aside className={
+            (hide)?
+            (`journal__sidebar`):
+            (`journal__sidebar journal__sidebar__hide`)
+            }>
             <div className="journal__sidebar-navbar">
+                <button 
+                    className="btn btn-toggle"
+                    onClick={handleSidebar}
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
                 <h3>
                     <i className="far fa-moon"></i>
                     <span>{name}</span>
@@ -36,6 +52,7 @@ export const SideBar = () => {
                 <i className="far fa-calendar-plus fa-5x"></i>
                 <p className="mt-5">New Entry</p>
             </div>
+            <h3>Elija su Nota:</h3>
             <JournalEntries/>
         </aside>
     )

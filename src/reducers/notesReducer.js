@@ -61,6 +61,11 @@ export const notesReducer=(state=initialState,action)=>{
                 active:null,
                 notes:[]
             }
+        case types.sideHide:
+            return{
+                ...state,
+                hide:action.payload,
+            }
         default:
             return state;
     }

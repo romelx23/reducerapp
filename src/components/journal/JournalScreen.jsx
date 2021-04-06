@@ -11,7 +11,7 @@ export const JournalScreen = () => {
     return (
         <div className="journal__main-content animate__animated animate__fadeIn animate__faster">
             <SideBar/>
-            <main>
+            <main className="main__sidebar">
                 {
                     (active)?
                     <NotesScreen/>:

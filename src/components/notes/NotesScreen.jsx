@@ -22,7 +22,7 @@ export const NotesScreen = () => {
     }, [note,reset])
 
     useEffect(() => {
-        console.log(formvalues);
+        // console.log(formvalues);
         formvalues.url=note.url;
         dispatch(activeNote(formvalues.id,{...formvalues}))
     }, [formvalues,dispatch])
