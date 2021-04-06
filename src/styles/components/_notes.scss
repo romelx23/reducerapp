@@ -47,3 +47,11 @@
     width: 430px;
     height: 480px;
 }
+
+@media (max-width:570px) {
+    .notes__images img{
+        box-shadow: 5px 5px 10px $dark-grey;
+        width: 90%;
+        height: 480px;
+    }
+}
