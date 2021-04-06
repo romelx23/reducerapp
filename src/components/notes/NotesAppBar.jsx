@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { sideHide, startSavedNote, startUploading } from '../../actions/notes';
+import {startSavedNote, startUploading } from '../../actions/notes';
 
 export const NotesAppBar = () => {
-    const [hiden, setHiden] = useState(false)
     const dispatch = useDispatch();
     const {active} = useSelector(state => state.notes)
     const handleSave=()=>{
@@ -19,10 +18,6 @@ export const NotesAppBar = () => {
             dispatch(startUploading(file));
         }
     }
-    const handleSidebar=()=>{
-        setHiden(!hiden)
-        dispatch(sideHide(hiden))
-    }
     return (
         <div className="notes__appbar">
             <span>28 Agosto 2020</span>
@@ -34,12 +29,6 @@ export const NotesAppBar = () => {
             onChange={ handleFileChange }
             />
             <div className="">
-                <button 
-                        className="btn"
-                        onClick={handleSidebar}
-                    >
-                        <i class="fas fa-bars"></i>
-                </button>
                 <button 
                 className="btn btn-note-image"
                 onClick={handlePictureClick}

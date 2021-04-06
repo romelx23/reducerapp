@@ -1,8 +1,9 @@
 .notes__main-content{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 100%;
+    background:linear-gradient(rgb(171, 135, 255),rgb(135, 191, 255)) ;
 }
 .notes__appbar{
     display: flex;
